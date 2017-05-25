@@ -1,0 +1,34 @@
+{
+  "name": "json-rpc2-client",
+  "version": "0.0.1",
+  "description": "Simple jsonrpc 2.0 client",
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoenixrising87/jsonrpc.git"
+  },
+  "keywords": [
+    "json",
+    "json-rpc",
+    "json-rpc2",
+    "json-rpc-client"
+  ],
+  "author": "Manuel Heim",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/phoenixrising87/jsonrpc/issues"
+  },
+  "homepage": "https://github.com/phoenixrising87/jsonrpc#readme",
+  "devDependencies": {
+    "@types/concat-stream": "^1.6.0",
+    "@types/lodash": "^4.14.64",
+    "@types/node": "^7.0.22",
+    "concat-stream": "^1.6.0",
+    "lodash": "^4.17.4",
+    "promise": "^7.1.1"
+  }
+}
