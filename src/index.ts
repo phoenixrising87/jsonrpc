@@ -1,4 +1,4 @@
-var xmlrpc = require('./xmlrpc');
+import XmlRpc from './xmlrpc';
 
-module.exports = xmlrpc;
-export default xmlrpc;
+module.exports = XmlRpc;
+export default XmlRpc;

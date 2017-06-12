@@ -1,2 +1,2 @@
-declare var xmlrpc: any;
-export default xmlrpc;
+import XmlRpc from './xmlrpc';
+export default XmlRpc;

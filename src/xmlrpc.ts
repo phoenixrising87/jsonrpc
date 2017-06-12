@@ -62,4 +62,4 @@ class XmlRpc {
     }
 }
 
-module.exports = XmlRpc;
+export default XmlRpc;
