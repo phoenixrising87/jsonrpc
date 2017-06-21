@@ -12,7 +12,7 @@ class XmlRpc {
 
     }
 
-    public call(method: string, params: any): Promise<string> {
+    public call(method: string, params: any): Promise<any> {
         let payload = JSON.stringify({
             jsonrpc: '2.0',
             method: method,
@@ -22,7 +22,7 @@ class XmlRpc {
         return this.makeRequest(payload);
     }
 
-    private makeRequest(payload: string): Promise<string> {
+    private makeRequest(payload: string): Promise<any> {
         let options = {
             host: this.host,
             path: this.path,
@@ -32,7 +32,7 @@ class XmlRpc {
             }
         };
         return new Promise((resolve, reject) => {
-            var req;
+            let req;
             if (this.https) {
                 req = https.request(options, (response) => {
                     this.callback(response, resolve, reject);
@@ -56,7 +56,7 @@ class XmlRpc {
                 var jsonResponse = JSON.parse(body.toString());
                 resolve(jsonResponse);
             } catch (error) {
-                reject(error);
+                reject();
             }
         }));
     }
