@@ -51,7 +51,7 @@ class JsonRpc {
                 resolve(jsonResponse);
             }
             catch (error) {
-                reject();
+                reject(error);
             }
         }));
     }

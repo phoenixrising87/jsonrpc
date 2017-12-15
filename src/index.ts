@@ -56,7 +56,7 @@ class JsonRpc {
                 var jsonResponse = JSON.parse(body.toString());
                 resolve(jsonResponse);
             } catch (error) {
-                reject();
+                reject(error);
             }
         }));
     }

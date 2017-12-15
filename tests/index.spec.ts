@@ -76,7 +76,7 @@ describe('JsonRpc Client', () => {
 
             let xmlRpcClient = new JsonRpc(host, path);
             xmlRpcClient.call('test', {}).catch((err) => {
-                expect(err).toBeUndefined();
+                expect(err).toBeDefined();
             });
 
             scope.done();
@@ -108,7 +108,7 @@ describe('JsonRpc Client', () => {
 
             let xmlRpcClient = new JsonRpc(host, path, true);
             xmlRpcClient.call('test', {}).catch((err) => {
-                expect(err).toBeUndefined();
+                expect(err).toBeDefined();
             });
 
             scope.done();
