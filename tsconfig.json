@@ -1,19 +1,19 @@
 {
     "compilerOptions": {
-        "outDir": "lib",
+        "outDir": "dist",
         "declaration": true,
         "target": "es6",
         "sourceMap": true,
         "module": "commonjs",
         "types": [
-            "node",
-            "jasmine"
+            "jasmine",
+            "node"
         ],
         "typeRoots": [
             "node_modules/@types"
         ]
     },
     "include": [
-        "src"
+        "src/**/*.ts"
     ]
 }

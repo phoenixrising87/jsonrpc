@@ -1,4 +1,4 @@
-import XmlRpc from '../src/xmlrpc';
+import XmlRpc from './../src/xmlrpc';
 import * as http from "http";
 import nock = require("nock");
 

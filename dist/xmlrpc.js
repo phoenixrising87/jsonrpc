@@ -29,7 +29,7 @@ class XmlRpc {
             }
         };
         return new Promise((resolve, reject) => {
-            var req;
+            let req;
             if (this.https) {
                 req = https.request(options, (response) => {
                     this.callback(response, resolve, reject);
@@ -51,7 +51,7 @@ class XmlRpc {
                 resolve(jsonResponse);
             }
             catch (error) {
-                reject(error);
+                reject();
             }
         }));
     }
