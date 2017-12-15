@@ -1,8 +1,8 @@
-import XmlRpc from './../src/xmlrpc';
+import JsonRpc from './../src/index';
 import * as http from "http";
 import nock = require("nock");
 
-describe('XmlRpc Client', () => {
+describe('JsonRpc Client', () => {
 
     let host: string = '127.0.0.1:80';
     let path: string = '/';
@@ -23,7 +23,7 @@ describe('XmlRpc Client', () => {
 
         spyOn(http, 'request').and.returnValue(req);
 
-        let xmlRpcClient = new XmlRpc(host, path);
+        let xmlRpcClient = new JsonRpc(host, path);
         xmlRpcClient.call(method, params);
 
         expect(req.write).toHaveBeenCalledWith(jasmine.stringMatching(expectedCapped));
@@ -44,7 +44,7 @@ describe('XmlRpc Client', () => {
 
         spyOn(http, 'request').and.callThrough();
 
-        let xmlRpcClient = new XmlRpc(host, path);
+        let xmlRpcClient = new JsonRpc(host, path);
         xmlRpcClient.call('test', {});
         scope.done();
         
@@ -61,7 +61,7 @@ describe('XmlRpc Client', () => {
                 .post(path)
                 .reply(200, "{}");
 
-            let xmlRpcClient = new XmlRpc(host, path);
+            let xmlRpcClient = new JsonRpc(host, path);
             xmlRpcClient.call('test', {}).then((response) => {
                 expect(response).toEqual({});
             });
@@ -74,7 +74,7 @@ describe('XmlRpc Client', () => {
                 .post(path)
                 .reply(200, "string");
 
-            let xmlRpcClient = new XmlRpc(host, path);
+            let xmlRpcClient = new JsonRpc(host, path);
             xmlRpcClient.call('test', {}).catch((err) => {
                 expect(err).toBeUndefined();
             });
@@ -93,7 +93,7 @@ describe('XmlRpc Client', () => {
                 .post(path)
                 .reply(200, "{}");
 
-            let xmlRpcClient = new XmlRpc(host, path, true);
+            let xmlRpcClient = new JsonRpc(host, path, true);
             xmlRpcClient.call('test', {}).then((response) => {
                 expect(response).toEqual({});
             });
@@ -106,7 +106,7 @@ describe('XmlRpc Client', () => {
                 .post(path)
                 .reply(200, "string");
 
-            let xmlRpcClient = new XmlRpc(host, path, true);
+            let xmlRpcClient = new JsonRpc(host, path, true);
             xmlRpcClient.call('test', {}).catch((err) => {
                 expect(err).toBeUndefined();
             });
